@@ -1,0 +1,19 @@
+Dart Collection literals 
+Dart has built in supports for lists maps and sets you can create them using literals 
+
+final aListOfStrings = ['one', 'two', 'three'];
+final aSetOfStrings = {'one', 'two', 'three'};
+final aMapOfStringsToInts = {
+  'one': 1,
+  'two': 2,
+  'three': 3,
+};
+ Darts type inference can assign types to these variables for you in here we can assign them as following :
+ final alistofInts=<int>[];
+ final asetofInts=<int>{};
+ final amapofinttoDouples=<int,Double>{};
+ 
+Specifying types is handy when you initialize a list with contents of a subtype, but still want the list to be List<BaseType>:
+
+final aListOfBaseType = <BaseType>[SubType(), SubType()];
+
