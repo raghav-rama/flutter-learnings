@@ -1,0 +1,68 @@
+String interpolation 
+
+To put the value of an expression inside a string, use ${expression}. If the expression is an identifier, you can omit the {}.
+
+Here are some examples of using string interpolation:
+
+String	 	Result
+'${3 + 2}'	 	'5'
+'${"word".toUpperCase()}'	 	'WORD'
+'$myObject'	 	The value of myObject.toString()
+#Code example
+The following function takes two integers as parameters. Make it return a string containing both integers separated by a space. For example, stringify(2, 3) should return '2 3'.
+String stringify(int x, int y) {
+  return '$x $y';
+}
+
+// Tests your solution (Don't edit!): 
+void main() {
+  assert(stringify(2, 3) == '2 3',
+      "Your stringify method returned '${stringify(2, 3)}' instead of '2 3'");
+  print('Success!');
+}
+
+
+Nullable variable:-Dart enforces sound null safety. This means values can’t be null unless you say they can be. In other words, types default to non-nullable.
+
+Dart comes with null safety example 
+int a = null // INVALID
+To indicate that the given variable can be a null variable you can give it this way 
+int ? a =null //VALID
+OR YOU CAN SIMPLY AND WRITE AS follows since the initial value of the unassigned variables are set to null.
+ int ?a; //valid 
+
+ Dart 3 comes with a null saftey feature and it may sometimes not work with the 
+ given libraries 
+  so you can use this to debug the null function
+
+  dart --version                     # make sure this reports 3.0.0-417.1.beta or higher
+ dart pub get / flutter pub get     # this should resolve without issues
+ dart analyze / flutter analyze     # this should pass without errors
+
+Null-aware operators
+Dart offers some handy operators for dealing with values that might be null. One is the ??= assignment operator, which assigns a value to a variable only if that variable is currently null:
+Agar pehele se null ho toh and you want to set a default value except null then use this operator of assignment
+
+int? a; // = null
+a ??= 3;
+print(a); // <-- Prints 3.
+a is already assigned to a 3 hi print karega 
+a ??= 5;
+print(a); // <-- Still prints 3.
+
+Another null-aware operator is ??, which returns the expression on its left unless that expression’s value is null, in which case it evaluates and returns the expression on its right:
+
+print(1 ?? 3); // <-- Prints 1.
+print(null ?? 12); // <-- Prints 12.
+
+Conditional property access :
+To guard access to a property or method of an object that might be null, put a question mark (?) before the dot (.):
+
+myObject?.someProperty
+The preceding code is equivalent to the following:
+
+(myObject != null) ? myObject.someProperty : null
+You can chain multiple uses of ?. together in a single expression:
+
+myObject?.someProperty?.someMethod()
+The preceding code returns null (and never calls someMethod()) if either myObject or myObject.someProperty is null.
