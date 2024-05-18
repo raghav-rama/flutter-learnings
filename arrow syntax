@@ -1,0 +1,11 @@
+Arrow syntax(Dart)
+You might have seen the => symbol in Dart code. This arrow syntax is a way to define a function that executes the expression to its right and returns its value.
+
+For example, consider this call to the List class’s any() method:
+
+bool hasEmpty = aListOfStrings.any((s) {
+  return s.isEmpty;
+});
+Here’s a simpler way to write that code:
+
+bool hasEmpty = aListOfStrings.any((s) => s.isEmpty);
